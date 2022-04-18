@@ -24,14 +24,14 @@ const products = [
   },
   {
     id: 4,
-    name: 'Nike React Infinity Run Flyknit 3',
+    name: 'Nike React Infinity Run',
     price: '135.00',
     category: 'Training Shoes',
     description: 'The Nike Metcon 7 is the gold standard for weight training—even tougher and more stable than previous versions.We have also added React foam that ups the comfort to keep you ready for high-intensity cardio.Plus, a tab locks down your laces so you can forget about them coming untied when you are focused on your next PR.'
   },
   {
     id: 5,
-    name: 'Nike Pegasus Trail 3 GORE-TEX',
+    name: 'Nike Pegasus Trail ',
     price: '305.00',
     category: 'Waterproof Trail Running Shoes',
     description: 'Journey off the beaten path and into wet weather with the Nike Pegasus Trail 3 GORE-TEX. It is made with the same cushioned comfort you love, plus tough traction and improved midfoot construction for secure, neutral support. The waterproof upper helps keep you moving on rocky trails even when stormy conditions try to slow you down. Do not let the rain stop you—lace up and take on the elements.'

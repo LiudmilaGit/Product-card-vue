@@ -1,9 +1,13 @@
 <template>
+<div class="wrapper">
+  <div class="container">
   <nav class="navigation">
     <router-link :to="{ name: 'home' }">Home</router-link>
     <router-link :to="{ name: 'cart' }">Cart</router-link>
   </nav>
   <router-view />
+  </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -18,16 +22,28 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+.container{
+  max-width: 1730px;
+  margin: 0 auto;
+  padding: 0 15px;
 
-body {
-  border-color: aliceblue;
 }
 
 .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   width: 100%;
-  height: 30px;
+  height: 50px;
   background-color: #fff;
   line-height: 30px;
   font-size: 24px;
@@ -36,12 +52,15 @@ body {
     font-weight: bold;
     color: #676869;
     text-decoration: none;
-    margin: 0 5px 0 5px;
+    margin: 0 10px 0 10px;
 
     &.router-link-exact-active {
       color: #1a152e;
       transition: all 0.5s ease-in;
     }
+  }
+  .text-center{
+    text-align: center;
   }
 }
 </style>
