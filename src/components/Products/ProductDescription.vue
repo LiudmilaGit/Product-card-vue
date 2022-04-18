@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="description"
-    :class="{ show: active.drawer }"    
-  >
+  <div class="description" :class="{ show: active.drawer }">
     <div class="description__wrapper">
       <button
         class="description__button description__button--close"
@@ -18,18 +15,20 @@
           Price:${{ product.price }}
         </h3>
 
-        <div class="description__total">
+        <div v-if="productTotal" class="description__total">
           <h3 class="description__cart">In Cart</h3>
-          <h4 class="description__total">{{}}</h4>
+          <h4 class="description__total">{{ productTotal }}</h4>
         </div>
         <div class="description__inner">
           <button
+          @click="removeCart"
             class="description__button description__button--remove"
             type="button"
           >
             Remove
           </button>
           <button
+            @click="addCart"
             class="description__button description__button--add"
             type="button"
           >
@@ -42,10 +41,27 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'ProductDescription',
   props: ['product', 'active'],
   emits: ['close'],
+  methods: {
+    ...mapMutations(['addToCart', 'removeFromCart']),
+    addCart() {
+      return this.addToCart(this.product);
+    },
+    removeCart() {
+      return this.removeFromCart(this.product);
+    },
+  },
+  computed: {
+    ...mapGetters(['productQuantity']),
+
+    productTotal() {
+      return this.productQuantity(this.product);
+    },
+  },
 };
 </script>
 
@@ -68,7 +84,6 @@ export default {
     padding: 15px;
     z-index: 110;
     overflow-y: scroll;
-    
   }
   &__content {
     display: flex;

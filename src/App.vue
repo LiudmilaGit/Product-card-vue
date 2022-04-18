@@ -9,6 +9,24 @@
   </div>
   </div>
 </template>
+<script>
+import { mapMutations } from 'vuex'
+export default {
+mounted() {
+  this.updateLocalStorage()
+},
+
+
+  methods: {
+    ...mapMutations(['updateCartFromLocalStorage']),
+
+    updateLocalStorage() {
+      return this.updateCartFromLocalStorage()
+    }
+  },
+
+}
+</script>
 
 <style lang="scss">
 #app {
